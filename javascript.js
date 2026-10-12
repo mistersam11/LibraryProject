@@ -1,23 +1,20 @@
-function Book(title, author, pages, read) {
+const myLibrary = [];
+
+function Book(title,author,pages,read,id) {
     if (!new.target) {
-        throw Error("You must use the 'new' operator to call the Book constructor");
+        throw Error("You must use 'new' to call the constructor!")
     }
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-
-    this.info = function() {
-        let readString;
-        if (read) {
-            readString = "read";
-        } else {
-            readString = "not yet read"
-        }
-        console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${readString}`);
-    }
+    this.id = crypto.randomUUID();
 }
 
-const treeHouse = new Book("The Magic Tree House", "The Big Mouse", 34, false);
+function addBookToLibrary(title,author,pages,read) {
+    const newBook = new Book(title,author,pages,read);
+    myLibrary.push(newBook);
+}
 
-treeHouse.info();
+addBookToLibrary('James Jonathan','Subway Sammy','1000','true');
+console.log(myLibrary);
