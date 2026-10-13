@@ -15,7 +15,20 @@
         <div id="bookshelf">
 
         </div>
-        <button id="add-btn">Add Book</button>
+    </div>
+    <div id="bottom-btn">
+        <button id="add-btn" command="show-modal" commandfor="bookdialog">Add Book</button>
+        <dialog id="bookdialog">
+            <form>
+                <label for="booktitle">Title:</label><br>
+                <input type="text" id="booktitle" name="booktitle"><br>
+                <label for="bookauthor">Author:</label><br>
+                <input type="text" id="bookauthor" name="bookauthor"><br>
+                <label for="bookpages">Number of pages:</label><br>
+                <input type="text" id="bookpages" name="bookpages"><br>
+            </form>
+            <button commandfor="bookdialog" command="close">Submit</button>
+        </dialog>
     </div>
 </body>
 </html>
