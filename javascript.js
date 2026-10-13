@@ -16,5 +16,26 @@ function addBookToLibrary(title,author,pages,read) {
     myLibrary.push(newBook);
 }
 
-addBookToLibrary('James Jonathan','Subway Sammy','1000','true');
-console.log(myLibrary);
+const bookshelf = document.getElementById('bookshelf');
+
+addBookToLibrary("Harry Potter and the Philosopher's Stone",'J.K. Rowling','1000','true');
+addBookToLibrary("Uncle Tom's Cabin",'Harriet Beecher Stowe','258','false');
+
+myLibrary.forEach((item) => {
+    const book  = document.createElement("div");
+    book.classList = "book-body";
+
+    const content = `
+    <div class="book">
+        <div class="book-header">
+            <h2>${item.title}</h2>
+        </div>
+        <div class="book-body">
+            <h3>by ${item.author}</h3>
+            <p>${item.pages} pages</p>
+        </div>
+    </div>
+    `;
+
+    bookshelf.innerHTML += content;
+});
