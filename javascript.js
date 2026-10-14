@@ -17,6 +17,15 @@ function addBookToLibrary(title,author,pages,read) {
 }
 
 const bookshelf = document.getElementById('bookshelf');
+const form = document.getElementById('addform');
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById("booktitle").value;
+    const author = document.getElementById("bookauthor").value;
+    const pages = document.getElementById("bookpages").value;
+})
 
 addBookToLibrary("Harry Potter and the Philosopher's Stone",'J.K. Rowling','1000','true');
 addBookToLibrary("Uncle Tom's Cabin",'Harriet Beecher Stowe','258','false');

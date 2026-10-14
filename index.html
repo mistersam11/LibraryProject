@@ -18,16 +18,17 @@
     </div>
     <div id="bottom-btn">
         <button id="add-btn" command="show-modal" commandfor="bookdialog">Add Book</button>
-        <dialog id="bookdialog">
-            <form>
+        <dialog id="bookdialog" method="dialog">
+            <h4>Add a new book</h4>
+            <form id="addform" method="get">
                 <label for="booktitle">Title:</label><br>
-                <input type="text" id="booktitle" name="booktitle"><br>
+                <input type="text" id="booktitle" name="booktitle" required><br>
                 <label for="bookauthor">Author:</label><br>
-                <input type="text" id="bookauthor" name="bookauthor"><br>
+                <input type="text" id="bookauthor" name="bookauthor" required><br>
                 <label for="bookpages">Number of pages:</label><br>
-                <input type="text" id="bookpages" name="bookpages"><br>
+                <input type="text" id="bookpages" name="bookpages" required><br>
+                <button id="submit-btn" type="submit">Submit</button>
             </form>
-            <button commandfor="bookdialog" command="close">Submit</button>
         </dialog>
     </div>
 </body>
