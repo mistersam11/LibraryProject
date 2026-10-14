@@ -18,6 +18,7 @@ function addBookToLibrary(title,author,pages,read) {
 
 const bookshelf = document.getElementById('bookshelf');
 const form = document.getElementById('addform');
+const bookdialog = document.getElementById('bookdialog');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -25,26 +26,33 @@ form.addEventListener('submit', (event) => {
     const title = document.getElementById("booktitle").value;
     const author = document.getElementById("bookauthor").value;
     const pages = document.getElementById("bookpages").value;
+
+    addBookToLibrary(title,author,pages);
+    bookdialog.close();
+    displayBooks();
+
 })
 
-addBookToLibrary("Harry Potter and the Philosopher's Stone",'J.K. Rowling','1000','true');
-addBookToLibrary("Uncle Tom's Cabin",'Harriet Beecher Stowe','258','false');
+function displayBooks() {
+    bookshelf.innerHTML = "";
+    myLibrary.forEach((item) => {
+        const book  = document.createElement("div");
+        book.classList = "book-body";
 
-myLibrary.forEach((item) => {
-    const book  = document.createElement("div");
-    book.classList = "book-body";
-
-    const content = `
-    <div class="book">
-        <div class="book-header">
-            <h2>${item.title}</h2>
+        const content = `
+        <div class="book">
+            <div class="book-header">
+                <h2>${item.title}</h2>
+            </div>
+            <div class="book-body">
+                <h3>by ${item.author}</h3>
+                <p>${item.pages} pages</p>
+            </div>
         </div>
-        <div class="book-body">
-            <h3>by ${item.author}</h3>
-            <p>${item.pages} pages</p>
-        </div>
-    </div>
-    `;
+        `;
 
-    bookshelf.innerHTML += content;
-});
+        bookshelf.innerHTML += content;
+    });
+}
+
+displayBooks();

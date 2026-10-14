@@ -19,7 +19,10 @@
     <div id="bottom-btn">
         <button id="add-btn" command="show-modal" commandfor="bookdialog">Add Book</button>
         <dialog id="bookdialog" method="dialog">
-            <h4>Add a new book</h4>
+            <div id="form-header">
+                <h4>Add a new book</h4>
+                <button id="close-form">X</button>
+            </div>
             <form id="addform" method="get">
                 <label for="booktitle">Title:</label><br>
                 <input type="text" id="booktitle" name="booktitle" required><br>

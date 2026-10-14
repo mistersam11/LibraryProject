@@ -166,3 +166,27 @@ input:valid {
     background-color: black;
     color: white;
 }
+
+#form-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#close-form {
+    margin-left: auto;
+    padding: 0;
+    height: 2rem;
+    width: 2rem;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#close-form:hover {
+    background-color: gray;
+    color: white;
+}
